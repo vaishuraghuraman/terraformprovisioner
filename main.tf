@@ -71,7 +71,8 @@ resource "google_compute_instance" "vm1" {
   }
 
   metadata ={
-   ssh-keys = "${var.user}:${file("${var.ssh_public_key}")}"
+   //ssh-keys = "${var.user}:${file("${var.ssh_public_key}")}"
+   sshKeys = "${var.user}:${var.ssh_public_key}"
 }
 
 provisioner "remote-exec" {
