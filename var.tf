@@ -53,11 +53,12 @@ variable "user" {
 default = "student-04-f43feaaee3ba@qwiklabs.net"
 }
 //PRIVATE KEY
-variable "ssh_private_key" {
-    description = "Path to the SSH public key file"
+/*variable "ssh_private_key" {
+ description = "Path to the SSH public key file"
   type        = string
 
 }
+*/
 //PUBLIC KEY
 
 

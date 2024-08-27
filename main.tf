@@ -74,7 +74,7 @@ resource "google_compute_instance" "vm1" {
    //ssh-keys = "${var.user}:${file("${var.ssh_public_key}")}"
    sshKeys = "${var.user}:${var.ssh_public_key}"
 }
-
+/*
 provisioner "remote-exec" {
     connection {
       type        = "ssh"
@@ -87,8 +87,9 @@ provisioner "remote-exec" {
     inline = [
       "touch /tmp/temp.txt",
     ]
+    
   }
-
+*/
 
   metadata_startup_script = "echo hi > /test.txt"
 
