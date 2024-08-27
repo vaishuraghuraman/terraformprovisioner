@@ -1,5 +1,5 @@
 variable "project_id" {
-    default = "qwiklabs-gcp-04-ab621185894d"
+    default = "qwiklabs-gcp-02-47d8feace048"
 }
 
 variable "region" {
@@ -12,16 +12,16 @@ variable "networkname"{
 }
 
 variable "firewallname"{
-    default = "myfirewall"
+    default = "managementnet-allow-http-ssh-rdp-icmp"
 }
 
 variable "subnetname" {
-   default = "mysubnet" 
+   default = "managementsubnet-us" 
 }
 
 
 variable "ip_cidr_range" {
-    default = "10.2.0.0/16"
+    default = "10.130.0.0/20"
 }
 
 variable range_name {
@@ -34,7 +34,7 @@ variable "ip_cidr_range1"{
 }
 
 variable "vmname"{
-    default = "myvm"
+    default = "privatenet-us-vm"
 }
 
 variable "machine_type" {
@@ -50,11 +50,13 @@ variable "image" {
 }
 
 variable "user" {
-default = "qwiklabs-gcp-04-ab621185894d"
+default = "student-04-f43feaaee3ba@qwiklabs.net"
 }
 //PRIVATE KEY
 variable "ssh_private_key" {
-default = "/home/vaishuraghuraman20/key1"
+    description = "Path to the SSH public key file"
+  type        = string
+
 }
 //PUBLIC KEY
 
@@ -62,9 +64,9 @@ default = "/home/vaishuraghuraman20/key1"
 
 
 variable "ssh_public_key" {
-default ="/home/vaishuraghuraman20/key1.pub"
+  description = "Path to the SSH public key file"
+  type        = string
 }
-
 
 
 
