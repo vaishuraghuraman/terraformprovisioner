@@ -71,14 +71,14 @@ resource "google_compute_instance" "vm1" {
   }
 
   metadata = {
-    ssh-keys = "vaishuraghuraman20@penguin:${file("/home/vaishuraghuraman20/key1.pub")}"
+    ssh-keys = "student-04-b9d24e6ca1cb@qwiklabs.net:${file("~/.ssh/id_rsa.pub")}"
   }
 provisioner "remote-exec" {
     connection {
       type        = "ssh"
       user        = "ubuntu"
       timeout     = "500s"
-      private_key = "${file("/home/vaishuraghuraman20/key1")}"
+      private_key = "${file("~/.ssh/id_rsa")}"
       host = google_compute_instance.vm1.network_interface[0].access_config[0].nat_ip
     }
 
