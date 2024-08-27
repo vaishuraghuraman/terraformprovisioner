@@ -1,5 +1,5 @@
 variable "project_id" {
-    default = "qwiklabs-gcp-02-47d8feace048"
+    default = "qwiklabs-gcp-03-31256b2fdd24"
 }
 
 variable "region" {
@@ -50,7 +50,7 @@ variable "image" {
 }
 
 variable "user" {
-default = "student-04-f43feaaee3ba@qwiklabs.net"
+default = "student-03-7d21e9b9a621@qwiklabs.net"
 }
 //PRIVATE KEY
 /*variable "ssh_private_key" {
