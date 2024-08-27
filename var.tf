@@ -54,7 +54,7 @@ default = "qwiklabs-gcp-04-ab621185894d"
 }
 //PRIVATE KEY
 variable "ssh_private_key" {
-default ="~/.ssh/id_rsa"
+default = "/home/vaishuraghuraman20/key1"
 }
 //PUBLIC KEY
 
@@ -62,8 +62,9 @@ default ="~/.ssh/id_rsa"
 
 
 variable "ssh_public_key" {
-default ="~/.ssh/id_rsa.pub"
+default ="/home/vaishuraghuraman20/key1.pub"
 }
+
 
 
 
