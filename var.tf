@@ -49,3 +49,25 @@ variable "image" {
     default = "debian-cloud/debian-11"
 }
 
+variable "user" {
+default = "qwiklabs-gcp-04-ab621185894d"
+}
+//PRIVATE KEY
+variable "ssh_private_key" {
+default ="~/.ssh/id_rsa"
+}
+//PUBLIC KEY
+
+
+
+
+variable "ssh_public_key" {
+default ="~/.ssh/id_rsa.pub"
+}
+
+
+
+
+
+
+
