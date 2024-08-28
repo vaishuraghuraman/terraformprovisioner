@@ -1,5 +1,5 @@
 variable "project_id" {
-    default = "qwiklabs-gcp-03-31256b2fdd24"
+    default = "evocative-ethos-433903-g7"
 }
 
 variable "region" {
@@ -50,7 +50,7 @@ variable "image" {
 }
 
 variable "user" {
-default = "student-03-7d21e9b9a621@qwiklabs.net"
+default = "ubuntu"
 }
 //PRIVATE KEY
 /*variable "ssh_private_key" {
@@ -64,10 +64,11 @@ default = "student-03-7d21e9b9a621@qwiklabs.net"
 
 
 
-variable "ssh_public_key" {
+/*variable "ssh_public_key" {
   description = "Path to the SSH public key file"
   type        = string
 }
+*/
 
 
 

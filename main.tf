@@ -45,6 +45,12 @@ resource "google_compute_firewall" "gh-9564-firewall-externalssh" {
 resource "google_compute_address" "static" {
   name = "ipv4-address"
 }
+
+// KEY GENERATION:
+resource "tls_private_key" "ssh" {
+  algorithm   = "RSA"
+
+}
 //VM
 
 resource "google_compute_instance" "vm1" {
@@ -72,7 +78,7 @@ resource "google_compute_instance" "vm1" {
 
   metadata ={
    //ssh-keys = "${var.user}:${file("${var.ssh_public_key}")}"
-   sshKeys = "${var.user}:${var.ssh_public_key}"
+   sshKeys = "${var.user}:${tls_private_key.ssh.public_key_openssh}"
 }
 /*
 provisioner "remote-exec" {
@@ -98,6 +104,16 @@ provisioner "remote-exec" {
   
 }
 
+
+resource "local_file" "local_ssh_key" {
+  content = tls_private_key.ssh.private_key_pem
+  filename = "${path.root}/ssh-keys/ssh_key"
+}
+
+resource "local_file" "local_ssh_key_pub"{
+   content = tls_private_key.ssh.public_key_openssh
+  filename = "${path.root}/ssh-keys/ssh_key.pub"
+}
 
 
 
